@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+
 import api from '../services/api';
 import './styles.css';
 
@@ -20,7 +20,7 @@ function EnvioMensagem() {
         evt.preventDefault();
 
         try {
-            const response = await api.post('/env', {
+            await api.post('/env', {
                 id: formMsg.numero,
                 message: formMsg.mensagem
             });
